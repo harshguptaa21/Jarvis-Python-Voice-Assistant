@@ -4,13 +4,16 @@ import pyttsx3 # to convert text to speech
 import musicLibrary
 import requests
 import ollama
+import os
+from dotenv import load_dotenv
 #pip install pocketsphinx
 
 
 
 recognizer = sr.Recognizer()
 engine = pyttsx3.init()
-newsapi ="pub_7492fe59f9844c76bf9cb7b56de14eb6"
+load_dotenv()
+newsapi = os.getenv("NEWSDATA_API_KEY")
 
 def speak(text):
     # print("Speak function called:", text)
